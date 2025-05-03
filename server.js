@@ -10,3 +10,11 @@ app.get('/api/file/:name', (req, res) => {
         res.json({html});
     });
 });
+
+app.post('/api/file',(req,res) =>{
+    const {filename,content}=req.body;
+    const filePath=path.join(mdC,filename);
+    fs.writeFile(filePath, content => {
+        res.json({mensaje: 'Archivo guardado'});
+    })
+})
