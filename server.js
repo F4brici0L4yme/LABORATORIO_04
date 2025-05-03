@@ -14,3 +14,10 @@ const mdC=path.join(__dirname, 'markdowns');
 app.use(express.static(path.join(__dirname, 'pud')));
 app.use(bp.json());
 app.use(bp.urlencoded({extended: true}));
+
+app.get('/',(req, res) => {
+    fs.readdir(mdC,(err,files) => {
+        const mdFiles = files.filter(f => f.endsWith('.md'));
+        res.json({files: mdFiles})
+    });
+});
