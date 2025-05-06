@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <title>Document</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Visor de Markdown</title>
 </head>
 <body>
-    <p>Hola mundo!</p>
+    <h1>Visor de Archivos Markdown</h1>
+    
+    <h2>Archivos Disponibles</h2>
+    <ul id="file-list"></ul>
+
+    <h2>Contenido</h2>
+    <div id="preview"></div>
+
+    <h2>Crear Nuevo Archivo</h2>
+    <input id="filename" placeholder="nombre.md"><br>
+    <textarea id="content" placeholder="Contenido en Markdown..."></textarea><br>
+    <button onclick="crearArchivo()">Crear archivo</button>
 </body>
 </html>
